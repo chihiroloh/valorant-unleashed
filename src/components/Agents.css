@@ -1,0 +1,23 @@
+.primary {
+  color: var(--v-black);
+}
+
+.primary .label::before {
+  background-color: var(--v-white);
+}
+
+.label-text:after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 0.6rem;
+  width: 0.6rem;
+  right: 0;
+  bottom: 0;
+  background-color: var(--v-black);
+  transition: background-color 0.2s ease-in;
+}
+
+button:hover .label-text:after {
+  background-color: var(--v-white);
+}

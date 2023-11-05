@@ -13,7 +13,7 @@ body {
   padding: 15px;
   width: 100%;
   border-radius: 10px;
-  border-radius: 0; /* Optional: Remove the border-radius if you want it to be flush with the edges */
+  border-radius: 0;
   position: fixed; /* Makes the navbar fixed at the top */
   top: 0; /* Align to the top */
   left: 0; /* Align to the left */

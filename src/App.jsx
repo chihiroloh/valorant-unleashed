@@ -9,9 +9,10 @@ const App = () => {
   return (
     <Router>
       <Routes>
+        <Route path="/" element={<Home />} /> {/* Set as root path */}
         <Route path="/home" element={<Home />} />
         <Route path="/agents" element={<Agents />} />
-        <Route path="/agent/:agentId" element={<AgentDetail />} />{" "}
+        <Route path="/agent/:agentId" element={<AgentDetail />} />
       </Routes>
     </Router>
   );

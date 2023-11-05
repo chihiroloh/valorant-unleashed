@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import NavBar from "./NavBar";
 import { Link } from "react-router-dom";
+import "./Agents.css";
 
 const Agents = () => {
   const [agents, setAgents] = useState([]);
@@ -17,7 +18,6 @@ const Agents = () => {
         );
         setAgents(playableAgents);
 
-        // Extract unique roles
         const uniqueRoles = Array.from(
           new Set(playableAgents.map((agent) => agent.role.displayName))
         );
@@ -39,7 +39,6 @@ const Agents = () => {
   return (
     <>
       <NavBar />
-
       <section className="agents-preview">
         <h2 className="list">{selectedRole || "Meet the Agents"}</h2>
         <div className="role-buttons">

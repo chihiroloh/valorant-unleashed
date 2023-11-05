@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import NavBar from "./NavBar";
 import "./Home.css";
-import valorantLogo from "../images/valorantlogo.png";
+import backgroundVideo from "../videos/VAL_Ep6_Homepage-CG-Video_V5.mp4";
 
 const Home = () => {
   const [agents, setAgents] = useState([]);
@@ -23,14 +23,19 @@ const Home = () => {
 
   return (
     <div>
-      <header className="header-logo">
-        <img src={valorantLogo} alt="Valorant Logo" />
-      </header>
-      <NavBar />
-      <br />
-      <br />
+      <header className="header-logo">{/* Header content */}</header>
+      <NavBar />{" "}
+      <div className="video-container">
+        <video className="background-video" autoPlay loop muted>
+          <source src={backgroundVideo} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div className="video-overlay">
+          <h1>Valorant Unleashed</h1>
+        </div>
+      </div>
       <section className="introduction">
-        <h1>Welcome to Valorant Unleashed!</h1>
+        <h1>About Me</h1>
         <p>
           Step into the realm of heroes and their arsenals at Valorant
           Unleashed! Here, the pulse of every ability thrums and the lore of
@@ -56,6 +61,13 @@ const Home = () => {
         </p>
       </section>
       <br />
+      <div className="white">
+        <p>
+          <span className="bg"></span>
+          <span className="base"></span>
+          <span className="text">VIEW ALL AGENTS</span>
+        </p>
+      </div>
     </div>
   );
 };
