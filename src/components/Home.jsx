@@ -34,8 +34,9 @@ const Home = () => {
           <h1>Valorant Unleashed</h1>
         </div>
       </div>
+      <br />
       <section className="introduction">
-        <h1>About Me</h1>
+        <h1>About</h1>
         <p>
           Step into the realm of heroes and their arsenals at Valorant
           Unleashed! Here, the pulse of every ability thrums and the lore of

@@ -6,6 +6,10 @@ h1 {
 p {
   color: white;
   justify-content: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: justify;
 }
 
 .list {
@@ -50,7 +54,7 @@ p {
   height: auto;
   display: block;
 }
-/* Add this to your Home.css */
+
 .white {
   width: 100%;
   max-width: 240px;
