@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #0f1923;
+  padding-top: 0px;
+}
+
+#sse1 {
+  background-color: #0f1923;
+  height: 100px;
+  padding: 15px;
+  width: 100%;
+  border-radius: 10px;
+  border-radius: 0; /* Optional: Remove the border-radius if you want it to be flush with the edges */
+  position: fixed; /* Makes the navbar fixed at the top */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
+  z-index: 1000; /* Ensures the navbar is above other content */
+}
+
+#sses1 {
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+#sses1 ul {
+  display: flex; /* Turn it into a flex container */
+  justify-content: space-between; /* Spread out the child elements evenly */
+  align-items: center; /* Center items vertically */
+  height: 100%; /* Make sure it takes the full height of the navbar */
+  position: relative;
+  list-style-type: none;
+  margin: 0;
+  padding: 0px 0px; /* Add padding on the sides */
+  border: solid 1px #6c0000;
+}
+#sses1 li {
+  flex: 1; /* This will make each li element take equal space */
+  text-align: center; /* Center the text within each li */
+}
+#sses1 li.highlight {
+  background-color: #ff4655;
+  top: 36px;
+  height: 2px;
+  border-bottom: solid 3px #ff4655;
+  z-index: 2;
+  position: absolute;
+  visibility: hidden;
+}
+
+#sses1 a {
+  font: bold 16px Arial;
+  text-decoration: none;
+  color: white;
+  display: block;
+  padding: 8px 20px;
+  border-left: solid 1px #6c0000;
+}
+
+#sses1 a:hover {
+  background: #ff4655;
+  color: #ffffff;
+}
+
+#sses1 li:last-child a {
+  border-right: solid 1px #6c0000;
+}
+
+.clearfix:after {
+  content: ".";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}

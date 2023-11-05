@@ -1,0 +1,51 @@
+h1 {
+  color: white;
+  text-align: center;
+}
+
+p {
+  color: red;
+  justify-content: center;
+}
+
+.list {
+  color: white;
+  text-align: center;
+}
+
+.agent-cards {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 25px;
+  padding: 65px;
+}
+
+.agent-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem;
+  color: white;
+}
+
+.agent-card img {
+  width: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .agent-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .agent-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.header-cover img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
