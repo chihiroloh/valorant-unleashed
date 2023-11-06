@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Fjalla+One:regular");
 
-h1 {
+.displayname {
   font-family: "Fjalla One";
   font-size: 70px;
   flex-wrap: wrap;

@@ -26,7 +26,7 @@ const AgentDetail = () => {
   return (
     <div>
       <NavBar />
-      <h1>{agentDetails.displayName}</h1>
+      <h1 className="displayname">{agentDetails.displayName}</h1>
       <img
         className="agent-image"
         src={agentDetails.fullPortrait}

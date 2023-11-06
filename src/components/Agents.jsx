@@ -49,6 +49,14 @@ const Agents = () => {
           decodeURIComponent(role).toLowerCase()
       )
     : agents;
+
+  // Inside the Agents component
+  const handleAgentClick = (agent) => {
+    // This function will be called when an agent card is clicked
+    onAgentSelect(agent);
+    // Navigation logic follows
+  };
+
   return (
     <>
       <NavBar />
