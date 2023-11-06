@@ -50,11 +50,8 @@ const Agents = () => {
       )
     : agents;
 
-  // Inside the Agents component
   const handleAgentClick = (agent) => {
-    // This function will be called when an agent card is clicked
     onAgentSelect(agent);
-    // Navigation logic follows
   };
 
   return (
@@ -74,7 +71,7 @@ const Agents = () => {
                 selectedRole.toLowerCase() === roleName.toLowerCase()
                   ? "active"
                   : ""
-              }`} // Add 'active' class based on selection
+              }`}
               onClick={() => handleRoleClick(roleName)}
             >
               <span className="label-text">{roleName}</span>
