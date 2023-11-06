@@ -3,7 +3,7 @@
   padding: 0;
 }
 body {
-  background: #0f1923;
+  background: #fff;
   padding-top: 0px;
 }
 
@@ -14,10 +14,10 @@ body {
   width: 100%;
   border-radius: 10px;
   border-radius: 0;
-  position: fixed; /* Makes the navbar fixed at the top */
-  top: 0; /* Align to the top */
-  left: 0; /* Align to the left */
-  z-index: 1000; /* Ensures the navbar is above other content */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 
 #sses1 {
@@ -25,22 +25,23 @@ body {
   background-position: center;
   width: 100%;
   margin: 0 auto;
+  background-color: #0f1923;
 }
 
 #sses1 ul {
-  display: flex; /* Turn it into a flex container */
-  justify-content: space-between; /* Spread out the child elements evenly */
-  align-items: center; /* Center items vertically */
-  height: 100%; /* Make sure it takes the full height of the navbar */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
   position: relative;
   list-style-type: none;
   margin: 0;
-  padding: 0px 0px; /* Add padding on the sides */
+  padding: 0px 0px;
   border: solid 1px #6c0000;
 }
 #sses1 li {
-  flex: 1; /* This will make each li element take equal space */
-  text-align: center; /* Center the text within each li */
+  flex: 1;
+  text-align: center;
 }
 #sses1 li.highlight {
   background-color: #ff4655;

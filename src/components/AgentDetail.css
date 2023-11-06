@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css?family=Fjalla+One:regular");
+
+h1 {
+  font-family: "Fjalla One";
+  font-size: 70px;
+  flex-wrap: wrap;
+  flex: 1 1 0px;
+  margin: 4px;
+  padding: 1.5rem;
+  min-width: 100px;
+  max-width: 400px;
+}
+
+.agent-image {
+  width: 600px;
+  height: auto;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+}

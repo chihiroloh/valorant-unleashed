@@ -1,12 +1,105 @@
+@import url("https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700,800,900&display=swap");
+
+:root {
+  --v-black: #0f1923;
+  --v-white: #ece8e1;
+  --v-red: #ff4655;
+}
+
+body {
+  background-color: #f6f5f3;
+}
+
+h2,
+h3,
+button {
+  font-family: "Rubik", sans-serif;
+}
+
+.list {
+  color: black;
+  font-size: 60px;
+  font-family: "Valorant";
+}
+h3 {
+  color: black;
+}
+
+button {
+  font-weight: 400;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.role-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: 100%;
+}
+
+.role-buttons button {
+  flex: 1 1 0px;
+  margin: 4px;
+  padding: 0.7rem;
+  min-width: 100px;
+  max-width: 400px;
+  text-align: center;
+}
+
+@media (max-width: 400px) {
+  .role-buttons button {
+    flex-basis: calc(100% - 8px);
+  }
+}
+
 .primary {
   color: var(--v-black);
-}
-
-.primary .label::before {
   background-color: var(--v-white);
+  padding: 6px 12px;
+  border: 0;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s ease;
 }
 
-.label-text:after {
+.primary:hover {
+  color: var(--v-white);
+}
+
+.primary .label-text {
+  position: relative;
+  display: block;
+  padding: 1.9rem 3rem;
+  z-index: 1;
+  transition: color 0.3s ease;
+}
+
+.primary:hover .label-text {
+  color: var(--v-white);
+}
+
+.primary .hover-effect {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 120%;
+  top: 0;
+  left: -5%;
+  z-index: 0;
+  background-color: var(--v-red);
+  transform: translateX(-100%) skew(-10deg);
+  transition: transform 0.3s ease-out;
+}
+
+.primary:hover .hover-effect {
+  transform: translateX(0) skew(-10deg);
+}
+
+.label-text::after {
   content: "";
   display: block;
   position: absolute;
@@ -18,6 +111,6 @@
   transition: background-color 0.2s ease-in;
 }
 
-button:hover .label-text:after {
+.primary:hover .label-text::after {
   background-color: var(--v-white);
 }

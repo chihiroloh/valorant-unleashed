@@ -3,23 +3,27 @@ import axios from "axios";
 import NavBar from "./NavBar";
 import "./Home.css";
 import backgroundVideo from "../videos/VAL_Ep6_Homepage-CG-Video_V5.mp4";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const [agents, setAgents] = useState([]);
+  const navigate = useNavigate();
 
+  //HTTP GET request made using axios
   useEffect(() => {
     axios
       .get("https://valorant-api.com/v1/agents?isPlayableCharacter=true")
       .then((response) => {
-        const playableAgents = response.data.data.filter(
-          (agent) => agent.isPlayableCharacter
-        );
-        setAgents(playableAgents);
+        setAgents(playableAgents); //update 'agents' state variable with filtered array of playable agents
       })
       .catch((error) => {
         console.error("Error fetching data: ", error);
       });
   }, []);
+
+  const handleViewAgentsClick = () => {
+    navigate("/agents");
+  };
 
   return (
     <div>
@@ -36,7 +40,7 @@ const Home = () => {
       </div>
       <br />
       <section className="introduction">
-        <h1>About</h1>
+        <h1 className="about">About</h1>
         <p>
           Step into the realm of heroes and their arsenals at Valorant
           Unleashed! Here, the pulse of every ability thrums and the lore of
@@ -62,12 +66,14 @@ const Home = () => {
         </p>
       </section>
       <br />
-      <div className="white">
-        <p>
-          <span className="bg"></span>
-          <span className="base"></span>
-          <span className="text">VIEW ALL AGENTS</span>
-        </p>
+      <div className="button-container">
+        <div className="white" onClick={handleViewAgentsClick}>
+          <p>
+            <span className="bg"></span>
+            <span className="base"></span>
+            <span className="text">VIEW ALL AGENTS</span>
+          </p>
+        </div>
       </div>
     </div>
   );

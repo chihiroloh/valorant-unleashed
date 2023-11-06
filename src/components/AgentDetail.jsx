@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import NavBar from "./NavBar";
+import "./AgentDetail.css";
 
 const AgentDetail = () => {
   const { agentId } = useParams();
@@ -23,8 +25,13 @@ const AgentDetail = () => {
 
   return (
     <div>
+      <NavBar />
       <h1>{agentDetails.displayName}</h1>
-      <img src={agentDetails.fullPortrait} alt={agentDetails.displayName} />
+      <img
+        className="agent-image"
+        src={agentDetails.fullPortrait}
+        alt={agentDetails.displayName}
+      />
       <h2>Role: {agentDetails.role?.displayName}</h2>
       <p>{agentDetails.role?.description}</p>
       <div>
@@ -43,7 +50,6 @@ const AgentDetail = () => {
           </div>
         ))}
       </div>
-      {/* You can add more sections here to display additional details */}
     </div>
   );
 };
