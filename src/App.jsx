@@ -5,20 +5,23 @@ import Agents from "./components/Agents";
 import AgentDetail from "./components/AgentDetail";
 
 const App = () => {
-  const [selectedRole, setSelectedRole] = useState(""); // Lifted state
+  const [selectedRole, setSelectedRole] = useState("");
+
+  const handleFetchError = (error) => {
+    // Logic to handle the error
+    console.error("Fetching agent details failed:", error);
+  };
 
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} /> {/* Set as root path */}
-        <Route path="/home" element={<Home />} />
-        {/* Pass selectedRole and setSelectedRole as props to Agents */}
+        <Route path="/" element={<Home />} />
         <Route
           path="/agents"
           element={
             <Agents
               selectedRole={selectedRole}
-              setSelectedRole={setSelectedRole}
+              onRoleSelect={setSelectedRole}
             />
           }
         />
@@ -27,19 +30,16 @@ const App = () => {
           element={
             <Agents
               selectedRole={selectedRole}
-              setSelectedRole={setSelectedRole}
+              onRoleSelect={setSelectedRole}
             />
           }
         />
-        {/* Pass additional props to AgentDetail */}
         <Route
           path="/agent/:agentId"
           element={
             <AgentDetail
-              additionalProp1="value1"
-              additionalProp2="value2"
-              additionalProp3="value3"
-              additionalProp4="value4"
+              containerClassName="custom-container-class"
+              onFetchError={handleFetchError}
             />
           }
         />

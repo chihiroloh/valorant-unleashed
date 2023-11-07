@@ -99,7 +99,7 @@ button {
   transform: translateX(0) skew(-10deg);
 }
 
-.label-text::after {
+.label-text:after {
   content: "";
   display: block;
   position: absolute;
@@ -112,5 +112,12 @@ button {
 }
 
 .primary:hover .label-text::after {
+  background-color: var(--v-white);
+}
+.role-button.active .label-text {
+  color: var(--v-red);
+}
+
+.role-button.active .hover-effect {
   background-color: var(--v-white);
 }

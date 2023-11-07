@@ -4,11 +4,11 @@ import axios from "axios";
 import NavBar from "./NavBar";
 import "./AgentDetail.css";
 
-const AgentDetail = () => {
+const AgentDetail = ({ containerClassName, onFetchError }) => {
   const { agentId } = useParams();
   const [agentDetails, setAgentDetails] = useState(null);
-  // State to keep track of the selected ability
   const [selectedAbility, setSelectedAbility] = useState(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     axios
@@ -16,22 +16,29 @@ const AgentDetail = () => {
       .then((response) => {
         setAgentDetails(response.data.data);
       })
-      .catch((error) => {
-        console.error("Error fetching agent details: ", error);
+      .catch((err) => {
+        console.error("Error fetching agent details: ", err);
+        setError(err);
+        if (onFetchError) {
+          onFetchError(err);
+        }
       });
-  }, [agentId]);
+  }, [agentId, onFetchError]);
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
 
   if (!agentDetails) {
     return <div>Loading...</div>;
   }
 
-  // Function to handle clicking on an ability
   const handleAbilityClick = (abilityIndex) => {
     setSelectedAbility(abilityIndex === selectedAbility ? null : abilityIndex);
   };
 
   return (
-    <div className="agent-detail-container">
+    <div className={`agent-detail-container ${containerClassName || ""}`}>
       <NavBar />
       <div className="agent-content">
         <div className="agent-profile">

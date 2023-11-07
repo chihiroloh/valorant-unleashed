@@ -38,7 +38,8 @@ const Agents = () => {
   }, [role]);
 
   const handleRoleClick = (roleName) => {
-    navigate(`/agents/${encodeURIComponent(roleName)}`); // Navigate to the URL with encoded role
+    console.log(`Role selected: ${roleName}`); // Debugging statement
+    navigate(`/agents/${encodeURIComponent(roleName.toLowerCase())}`); // Ensure consistent casing
   };
 
   // Filter agents based on the URL role parameter
@@ -50,9 +51,9 @@ const Agents = () => {
       )
     : agents;
 
-  const handleAgentClick = (agent) => {
-    onAgentSelect(agent);
-  };
+  // const handleAgentClick = (agent) => {
+  //   onAgentSelect(agent);
+  // };
 
   return (
     <>
@@ -67,7 +68,7 @@ const Agents = () => {
           {roles.map((roleName, index) => (
             <button
               key={index}
-              className={`primary ${
+              className={`primary role-button ${
                 selectedRole.toLowerCase() === roleName.toLowerCase()
                   ? "active"
                   : ""
