@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import Home from "./components/Home";
 import Agents from "./components/Agents";
 import AgentDetail from "./components/AgentDetail";
@@ -8,14 +13,14 @@ const App = () => {
   const [selectedRole, setSelectedRole] = useState("");
 
   const handleFetchError = (error) => {
-    // Logic to handle the error
     console.error("Fetching agent details failed:", error);
   };
 
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Navigate replace to="/home" />} />
+        <Route path="/home" element={<Home />} />
         <Route
           path="/agents"
           element={
