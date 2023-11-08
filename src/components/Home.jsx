@@ -3,7 +3,7 @@ import axios from "axios";
 import NavBar from "./NavBar";
 import "./Home.css";
 import backgroundVideo from "../videos/VAL_Ep6_Homepage-CG-Video_V5.mp4";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom"; // navigate to the agents page when the button is clicked.
 
 // Video Section Component
 const VideoSection = (props) => (
