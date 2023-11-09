@@ -64,22 +64,25 @@ const AgentDetail = ({ containerClassName, onFetchError }) => {
             <h2 className="abilitiesheader">Abilities:</h2>
             <br />
             <div className="ability-buttons">
-              {agentDetails.abilities.map((ability, index) => (
-                <button
-                  key={index}
-                  className={`ability-button ${
-                    selectedAbility === index ? "selected" : ""
-                  }`}
-                  onClick={() => handleAbilityClick(index)}
-                  aria-label={`Ability: ${ability.displayName}`}
-                >
-                  <img
-                    className="ability-image"
-                    src={ability.displayIcon}
-                    alt={ability.displayName}
-                  />
-                </button>
-              ))}
+              {agentDetails.abilities.map(
+                (ability, index) =>
+                  ability.displayIcon ? (
+                    <button
+                      key={index}
+                      className={`ability-button ${
+                        selectedAbility === index ? "selected" : ""
+                      }`}
+                      onClick={() => handleAbilityClick(index)}
+                      aria-label={`Ability: ${ability.displayName}`}
+                    >
+                      <img
+                        className="ability-image"
+                        src={ability.displayIcon}
+                        alt={ability.displayName}
+                      />
+                    </button>
+                  ) : null // return null if there's no displayIcon
+              )}
             </div>
             <br />
             {selectedAbility !== null && (
