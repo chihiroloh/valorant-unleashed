@@ -7,10 +7,6 @@ const NavBar = () => {
     { name: "Home", link: "/home" },
     { name: "Agents", link: "/agents" },
   ];
-  // const handleRoleSelect = (roleName) => {
-  //   setSelectedRole(roleName);
-  //   navigate(`/agents/${encodeURIComponent(roleName.toLowerCase())}`);
-  // };
 
   return (
     <nav id="sses1">
